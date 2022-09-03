@@ -23,6 +23,7 @@ function showDuration(name) {
     return false
 }
 
+
 function showDurationSecond(name) {
     const foundExercise = exercises.find(ex => ex.name === name)
     if (foundExercise === undefined) {
@@ -38,12 +39,15 @@ function showDurationSecond(name) {
 //that the person wants to do (e.g. 4), gives them a random set of unique exercises back as a workout
 
 const randomWorkout = (number) => {
-    // return Math.floor(Math.random() * number)
-    let activities = []
-    for (let ex of exercises) {
-        activities.push(ex.name)
+    let activities = exercises.map((obj) => obj.name)
+    const numberedActivities = []
+    while (numberedActivities.length < number) {
+        const randomSelection = Math.floor(Math.random() * (activities.length))
+        const selectedExerciseName = activities[randomSelection]
+        numberedActivities.push(selectedExerciseName)
+        activities = activities.filter((exerciseName) => exerciseName !== selectedExerciseName)
     }
-    return activities.slice(0, number)
+    return numberedActivities
 }
 
 
@@ -52,9 +56,9 @@ const randomWorkout = (number) => {
 //  }
 
 
-
-
-console.log(randomWorkout(4))
+// code wars
+// filter (security checkopoint --> you can come through)
+console.log(randomWorkout(5))
 // console.log(showDurationSecond('dips'));
 // console.log(showDurationSecond('run'));
 
