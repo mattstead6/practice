@@ -48,3 +48,18 @@ console.log(answer)
 
  const affordOrNot = canTheyAfford(100000, 10001)
  console.log(affordOrNot)
+
+ // find kth smallest number in array 
+
+
+ const myArray = [9,6,7,8,45,35,85,3,46,43,82]
+
+ const findKthSmallestNumber = (k) => {
+    const sortedArray = myArray.sort((a,b) => a-b)
+    return sortedArray[k]
+ }
+
+ console.log(findKthSmallestNumber(0))
+
+
+
