@@ -64,3 +64,51 @@ console.log(randomWorkout(5))
 
 
 
+
+
+
+
+
+// Anagram practice
+
+// i should get input of two words and output should be true or false
+// validAnagram('aab', 'baa')
+// validAnagram('awesome', 'aweso')
+// validAnagram('', '')
+// validAnagram('awesome', 12)
+
+
+const returnString = () => {
+return 'a'
+}
+
+const validAnagram = (string1, string2) => {
+
+    if (string1.length !== string2.length) {
+        return false
+    }
+
+    const firstWord = {};
+    const secondWord = {};
+    for (let char of string1) {
+        firstWord[char] = (firstWord[char] || 0) + 1
+    }
+    for (let char of string2) {
+        secondWord[char] = (secondWord[char] || 0) + 1
+    }
+    for (let letter in firstWord) {
+        if (letter in secondWord) {
+            if (firstWord[letter] !== secondWord[letter]) {
+                return false
+            }
+        }
+    }
+    return true
+}
+
+validAnagram('awesome', 'matthew')
+// iterate over each letter and put in a separate object with keys as letters and amounts as values
+// if there's an exact match of the two objects that we have created, true. Otherwise, false
+
+
+// dot notation vs bracket notation in objects

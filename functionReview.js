@@ -3,13 +3,13 @@
 // const answer = addNumbers(1,5)
 // console.log(answer);
 
-const addNumbersOther = (num1, num2) => ({answer: num1 + num2})
+const addNumbersOther = (num1, num2) => ({ answer: num1 + num2 })
 
 
 // implicit return 
 // don't receive a context (this keyword)
 
-const addNumbersAgain = function(num1, num2) {
+const addNumbersAgain = function (num1, num2) {
     return num1 + num2
 }
 
@@ -19,7 +19,7 @@ function addNumbers(num1, num2) {
 
 // hoisting! Brings function to the top
 
-const answer = addNumbersOther(1,5,3); 
+const answer = addNumbersOther(1, 5, 3);
 // this won't throw out an error!
 
 console.log(answer)
@@ -32,34 +32,47 @@ console.log(answer)
 // read about closur and higher order functions
 
 
- const maxAfordableRent = (salary) => 0.1 * salary
+const maxAfordableRent = (salary) => 0.2 * salary
 
- const maxRent = maxAfordableRent(2000)
- console.log(maxRent)
+const maxRent = maxAfordableRent(200000)
+console.log(maxRent)
 
 
- const canTheyAfford = (salary, rent) => {
-    if (rent <= 0.1 * salary) {
+const canTheyAfford = (salary, rent) => {
+    const maxRent = maxAfordableRent(salary)
+    if (rent <= maxRent) {
         return true
     }
     return false
- }
- 
-
- const affordOrNot = canTheyAfford(100000, 10001)
- console.log(affordOrNot)
-
- // find kth smallest number in array 
+}
 
 
- const myArray = [9,6,7,8,45,35,85,3,46,43,82]
+const affordOrNot = canTheyAfford(100000, 10001)
+console.log(affordOrNot)
 
- const findKthSmallestNumber = (k) => {
-    const sortedArray = myArray.sort((a,b) => a-b)
+
+
+
+
+
+
+
+
+
+
+
+
+// find kth smallest number in array 
+
+
+const myArray = [9, 6, 7, 8, 45, 35, 85, 3, 46, 43, 82]
+
+const findKthSmallestNumber = (k) => {
+    const sortedArray = myArray.sort((a, b) => a - b)
     return sortedArray[k]
- }
+}
 
- console.log(findKthSmallestNumber(0))
+console.log(findKthSmallestNumber(0))
 
 
 
