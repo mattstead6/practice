@@ -29,6 +29,38 @@ const findInArraySecondAttempt = (array, testFunction) => {
     }
 }
 
+const transformArrayIntoOtherArray = (arr, transformationFunction) => {
+    const newArr = []
+    arr.forEach(element => {
+        let transformedElement = transformationFunction(element)
+        newArr.push(transformedElement)
+    })
+    return newArr
+}
+
+
+const transformArrayIntoSmallerArray = (arr, testFunction) => {
+    const newArr=[]
+    for(let element of arr) {
+        if(testFunction(element)){
+            newArr.push(element)
+        }
+    }
+    return newArr;
+}
+
+
+console.log(transformArrayIntoOtherArray([1, 4, 9, 16], x => x * 2))
+
 console.log(findInArraySecondAttempt(nums, isGreaterThanFive))
 
 console.log(findInArraySecondAttempt(["matt", "joe", "penny", "mary"], name => { return name[0] === "m" }));
+
+console.log(transformArrayIntoOtherArray(["matt", "joe", "penny", "mary"], name => name.toUpperCase()))
+
+console.log(transformArrayIntoSmallerArray(["matt", "joe", "penny", "mary"], name => name[0] === 'm'))
+
+
+
+
+

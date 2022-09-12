@@ -25,11 +25,33 @@ const validAnagram = (string1, string2) => {
     return true
 }
 
-console.log(validAnagram('j', 'o'))
-console.log(validAnagram('aab', 'baa'))
+
 console.log(validAnagram('awesome', 'aweso'))
 console.log(validAnagram('', ''))
 console.log(validAnagram('awesome', 12))
 
+
+
+
+const validAnagramSecondWay = (string, string2) => {
+    if(string.length !== string2.length) {
+        return false
+    }
+    let wordCheck = {};
+    for(let char of string) {
+        wordCheck[char] = (wordCheck[char] || 0) + 1
+    }
+    for(let char of string2) {
+        if(!wordCheck[char]) {
+            return false
+        } else {
+            wordCheck[char] -= 1
+        }
+    }
+return true
+}
+
+
+console.log(validAnagramSecondWay('aabt', 'baa'))
 
 // practice bracket notation vs dot notation 
