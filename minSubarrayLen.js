@@ -8,6 +8,12 @@
 
 // Space Complexity - O(1)
 
+function minSubArrayLen(arr, ) {
+    // sum the first two 
+    // check if sum is more than or equal to target
+    // if it IS, then 
+}
+
 
 
 minSubArrayLen([2,3,1,2,4,3], 7) // 2 -> because [4,3] is the smallest subarray
