@@ -40,3 +40,11 @@ for (i = 0; i < size - 1; i++) {
         return false
     } 
 }
+
+
+
+function countUniqueValues(arr) {
+    let start = 0;
+    let second = 0;
+    
+}
